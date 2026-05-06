@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio — Carol Daga</title>
-<link href="https://drive.google.com/file/d/1r36oS44FVWJ6MKYXeoYATOrmI0lthFdv/view?usp=sharing" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,9 +14,22 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home"       class="mobile-link">Home</a>
+  <a href="#projects"   class="mobile-link">Projetos</a>
+  <a href="#skills"     class="mobile-link">Skills</a>
+  <a href="#experience" class="mobile-link">Experiência</a>
+  <a href="#contact"    class="mobile-link">Contato</a>
+</div>
+
 <!-- HEADER -->
-<header>
+<header id="header">
   <div class="logo">Carol<span>.</span>Daga</div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#projects">Projetos</a>
@@ -22,6 +37,12 @@
     <a href="#experience">Experiência</a>
     <a href="#contact">Contato</a>
   </nav>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
 
 <!-- HERO -->
@@ -45,9 +66,9 @@
       </a>
     </div>
   </div>
-  <div class="hero-right">
+  <div class="hero-right fade-in">
     <div class="cherry-scene">
-      <canvas id="cherryCanvas" width="380" height="380"></canvas>
+      <canvas id="cherryCanvas"></canvas>
     </div>
   </div>
 </section>
@@ -64,17 +85,15 @@
   </div>
 
   <div class="carousel-wrapper" id="carouselWrapper">
-    <div class="carousel-track" id="carouselTrack">
-      <!-- Cards são inseridos via JS -->
-    </div>
+    <div class="carousel-track" id="carouselTrack"></div>
   </div>
 
   <div class="carousel-controls">
-    <button class="carousel-btn" id="prevBtn">
+    <button class="carousel-btn" id="prevBtn" aria-label="Anterior">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
     </button>
     <div class="carousel-dots" id="carouselDots"></div>
-    <button class="carousel-btn" id="nextBtn">
+    <button class="carousel-btn" id="nextBtn" aria-label="Próximo">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </button>
   </div>
@@ -90,8 +109,7 @@
     <span class="section-label">Competências</span>
     <h2 class="section-title">Skills & ferramentas</h2>
   </div>
-  <div class="skills-grid" id="skillsGrid">
-  </div>
+  <div class="skills-grid" id="skillsGrid"></div>
 </section>
 </div>
 
@@ -120,105 +138,160 @@
   <div class="contact-inner">
     <div class="contact-info fade-in">
       <p class="contact-info-title">Pronta para o próximo projeto extraordinário</p>
-      <p class="contact-info-desc">Seja para um novo produto, redesign de interface ou consultoria em UX estou disponível para colaborar em projetos que fazem a diferença.</p>
+      <p class="contact-info-desc">Seja para um novo produto, redesign de interface ou consultoria em UX — estou disponível para colaborar em projetos que fazem a diferença.</p>
       <div>
-        <p style="font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(248,246,247,0.3);margin-bottom:0.75rem;font-weight:600;">Redes sociais</p>
+        <p class="socials-label">Redes sociais</p>
         <div class="contact-socials">
-          <a class="social-link" href="https://www.linkedin.com/in/ana-carolina-daga-6a8595406/" title="LinkedIn">
+          <a class="social-link" href="https://www.linkedin.com/in/ana-carolina-daga-6a8595406/" title="LinkedIn" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <a class="social-link" href="https://github.com/Daga404" title="GitHub">
+          <a class="social-link" href="https://github.com/Daga404" title="GitHub" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
           </a>
-          <a class="social-link" href="https://dribbble.com/Caroldgt" title="Dribbble">
+          <a class="social-link" href="https://dribbble.com/Caroldgt" title="Dribbble" target="_blank" rel="noopener">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
           </a>
-          <!-- <a class="social-link" href="caroldaga2@gmail.com" title="Email">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a> -->
         </div>
       </div>
     </div>
-    <div class="contact-card fade-in" style="position:relative;">
 
-     <!-- Corner cherry deco -->
-<svg class="cherry-deco" style="top:-10px;right:-8px;width:60px;" viewBox="0 0 80 80" fill="none">
-  <circle cx="28" cy="52" r="16" fill="#8E0038"/>
-  <circle cx="55" cy="44" r="13" fill="#C2185B"/>
-  <path d="M28 36 Q38 10 55 31" stroke="#4a7c5f" stroke-width="2" fill="none"/>
-  <path d="M36 18 Q45 5 52 31" stroke="#4a7c5f" stroke-width="2.5" fill="none"/>
-  <circle cx="28" cy="52" r="6" fill="rgba(255,255,255,0.12)"/>
-</svg>
-<svg class="cherry-deco" style="bottom:-10px;left:-8px;width:52px;transform:scale(-1,1);" viewBox="0 0 80 80" fill="none">
-  <circle cx="28" cy="52" r="14" fill="#8E0038"/>
-  <circle cx="52" cy="46" r="11" fill="#C2185B"/>
-  <path d="M28 38 Q38 12 52 33" stroke="#4a7c5f" stroke-width="2" fill="none"/>
-  <circle cx="28" cy="52" r="5" fill="rgba(255,255,255,0.1)"/>
-</svg>
+    <div class="contact-card fade-in">
+      <!-- Corner cherry deco -->
+      <svg class="cherry-deco" style="top:-10px;right:-8px;width:60px;" viewBox="0 0 80 80" fill="none">
+        <circle cx="28" cy="52" r="16" fill="#8E0038"/>
+        <circle cx="55" cy="44" r="13" fill="#C2185B"/>
+        <path d="M28 36 Q38 10 55 31" stroke="#4a7c5f" stroke-width="2" fill="none"/>
+        <path d="M36 18 Q45 5 52 31" stroke="#4a7c5f" stroke-width="2.5" fill="none"/>
+        <circle cx="28" cy="52" r="6" fill="rgba(255,255,255,0.12)"/>
+      </svg>
+      <svg class="cherry-deco" style="bottom:-10px;left:-8px;width:52px;transform:scale(-1,1);" viewBox="0 0 80 80" fill="none">
+        <circle cx="28" cy="52" r="14" fill="#8E0038"/>
+        <circle cx="52" cy="46" r="11" fill="#C2185B"/>
+        <path d="M28 38 Q38 12 52 33" stroke="#4a7c5f" stroke-width="2" fill="none"/>
+        <circle cx="28" cy="52" r="5" fill="rgba(255,255,255,0.1)"/>
+      </svg>
 
-<form id="contact-form">
-  <div class="form-group">
-    <label class="form-label">Nome</label>
-    <input class="form-input" type="text" name="nome" placeholder="Seu nome completo" required>
+      <form id="contact-form">
+        <div class="form-group">
+          <label class="form-label">Nome</label>
+          <input class="form-input" type="text" name="nome" placeholder="Seu nome completo" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" type="email" name="email" placeholder="seu@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mensagem</label>
+          <textarea class="form-textarea" name="mensagem" placeholder="Conte-me sobre seu projeto..." required></textarea>
+        </div>
+        <button class="btn-primary btn-full" type="submit">
+          Enviar mensagem
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <p id="form-status"></p>
+      </form>
+    </div>
   </div>
-  <div class="form-group">
-    <label class="form-label">Email</label>
-    <input class="form-input" type="email" name="email" placeholder="seu@email.com" required>
-  </div>
-  <div class="form-group">
-    <label class="form-label">Mensagem</label>
-    <textarea class="form-textarea" name="mensagem" placeholder="Conte-me sobre seu projeto..." required></textarea>
-  </div>
-  <button class="btn-primary" type="submit" style="width:100%;justify-content:center;margin-top:0.5rem;">
-    Enviar mensagem
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-  </button>
-  <p id="form-status" style="text-align:center;margin-top:1rem;font-size:0.9rem;"></p>
-</form>
+</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
   <p class="footer-copy">© 2025 Carol Daga. Todos os direitos reservados.</p>
   <div class="footer-links">
-    <a href="#">Política de Privacidade</a>
+    <a href="#">Privacidade</a>
     <a href="#">Termos</a>
   </div>
 </footer>
 
 <script>
-// ── CURSOR ──
-const cursor = document.getElementById('cursor');
+// ── HAMBURGER MENU ──
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const overlay    = document.getElementById('overlay');
+
+function toggleMenu(force) {
+  const isOpen = hamburger.classList.toggle('open', force);
+  mobileMenu.classList.toggle('open', isOpen);
+  overlay.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+hamburger.addEventListener('click', () => toggleMenu());
+overlay.addEventListener('click', () => toggleMenu(false));
+
+document.querySelectorAll('.mobile-link').forEach(a =>
+  a.addEventListener('click', () => toggleMenu(false))
+);
+
+// Close on resize to desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768) toggleMenu(false);
+});
+
+// ── CURSOR (desktop only) ──
+const cursor     = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
 let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx+'px'; cursor.style.top = my+'px'; });
-function animateRing() {
-  rx += (mx - rx) * 0.14;
-  ry += (my - ry) * 0.14;
-  cursorRing.style.left = rx+'px'; cursorRing.style.top = ry+'px';
-  requestAnimationFrame(animateRing);
+
+if (window.matchMedia('(pointer: fine)').matches) {
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top  = my + 'px';
+  });
+  (function animateRing() {
+    rx += (mx - rx) * 0.14;
+    ry += (my - ry) * 0.14;
+    cursorRing.style.left = rx + 'px';
+    cursorRing.style.top  = ry + 'px';
+    requestAnimationFrame(animateRing);
+  })();
+} else {
+  cursor.style.display     = 'none';
+  cursorRing.style.display = 'none';
+  document.body.style.cursor = 'auto';
 }
-animateRing();
 
 // ── CHERRY CANVAS ──
 (function() {
   const canvas = document.getElementById('cherryCanvas');
-  const ctx = canvas.getContext('2d');
-  const W = 380, H = 380;
-  let mouseX = 0, mouseY = 0;
-  let tiltX = 0, tiltY = 0;
+  const ctx    = canvas.getContext('2d');
+  let W, H, mouseX = 0, mouseY = 0;
+
+  function resize() {
+    const scene = canvas.parentElement;
+    const size  = scene.offsetWidth;
+    W = H = size;
+    canvas.width  = size;
+    canvas.height = size;
+    canvas.style.width  = size + 'px';
+    canvas.style.height = size + 'px';
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
 
   document.addEventListener('mousemove', e => {
     const rect = canvas.getBoundingClientRect();
     mouseX = ((e.clientX - rect.left) / W - 0.5) * 2;
-    mouseY = ((e.clientY - rect.top) / H - 0.5) * 2;
+    mouseY = ((e.clientY - rect.top)  / H - 0.5) * 2;
   });
+
+  // Touch tilt
+  document.addEventListener('touchmove', e => {
+    const t = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    mouseX = ((t.clientX - rect.left) / W - 0.5) * 2;
+    mouseY = ((t.clientY - rect.top)  / H - 0.5) * 2;
+  }, { passive: true });
 
   function drawCherry(ox, oy, radius, tX, tY) {
     ctx.clearRect(0, 0, W, H);
     const cx = W/2 + ox + tX*18;
     const cy = H/2 + oy + tY*14;
 
-    // Shadow
     const shadowGrad = ctx.createRadialGradient(cx+10, cy+radius*0.9+20, 0, cx+10, cy+radius*0.9+20, radius*1.1);
     shadowGrad.addColorStop(0, 'rgba(0,0,0,0.35)');
     shadowGrad.addColorStop(1, 'rgba(0,0,0,0)');
@@ -227,30 +300,23 @@ animateRing();
     ctx.fillStyle = shadowGrad;
     ctx.fill();
 
-    // --- Cherry 1 (left, slightly behind) ---
     drawOneFruit(ctx, cx-34+tX*6, cy+16+tY*4, 58);
-
-    // --- Cherry 2 (right, front) ---
     drawOneFruit(ctx, cx+38+tX*8, cy+22+tY*4, 62);
 
-    // --- Stems ---
     ctx.strokeStyle = '#3d6b45';
-    ctx.lineWidth = 3;
-    ctx.lineCap = 'round';
+    ctx.lineWidth   = 3;
+    ctx.lineCap     = 'round';
 
-    // Left stem
     ctx.beginPath();
     ctx.moveTo(cx-34+tX*6, cy+16+tY*4-58);
     ctx.bezierCurveTo(cx-34+tX*6+5, cy-80, cx+tX*7-5, cy-95, cx+tX*7, cy-100);
     ctx.stroke();
 
-    // Right stem
     ctx.beginPath();
     ctx.moveTo(cx+38+tX*8, cy+22+tY*4-62);
     ctx.bezierCurveTo(cx+38+tX*8-5, cy-80, cx+tX*7+5, cy-95, cx+tX*7, cy-100);
     ctx.stroke();
 
-    // Leaf
     ctx.save();
     ctx.translate(cx+tX*7-2, cy-100);
     ctx.rotate(0.3 + tX*0.08);
@@ -261,7 +327,6 @@ animateRing();
     ctx.ellipse(0, -12, 9, 20, 0, 0, Math.PI*2);
     ctx.fillStyle = leafGrad;
     ctx.fill();
-    // Leaf vein
     ctx.strokeStyle = 'rgba(255,255,255,0.12)';
     ctx.lineWidth = 1;
     ctx.beginPath();
@@ -271,50 +336,36 @@ animateRing();
   }
 
   function drawOneFruit(ctx, cx, cy, r) {
-    // Base gradient - dark wine to bright crimson
     const baseGrad = ctx.createRadialGradient(cx-r*0.3, cy-r*0.35, r*0.05, cx, cy, r);
-    baseGrad.addColorStop(0, '#e8215a');
+    baseGrad.addColorStop(0,    '#e8215a');
     baseGrad.addColorStop(0.45, '#C2185B');
     baseGrad.addColorStop(0.78, '#8E0038');
-    baseGrad.addColorStop(1, '#5a0020');
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI*2);
-    ctx.fillStyle = baseGrad;
-    ctx.fill();
+    baseGrad.addColorStop(1,    '#5a0020');
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2);
+    ctx.fillStyle = baseGrad; ctx.fill();
 
-    // Dark rim (bottom edge depth)
     const rimGrad = ctx.createRadialGradient(cx+r*0.3, cy+r*0.4, 0, cx, cy, r);
-    rimGrad.addColorStop(0, 'rgba(0,0,0,0)');
+    rimGrad.addColorStop(0,    'rgba(0,0,0,0)');
     rimGrad.addColorStop(0.65, 'rgba(0,0,0,0)');
-    rimGrad.addColorStop(1, 'rgba(0,0,0,0.38)');
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI*2);
-    ctx.fillStyle = rimGrad;
-    ctx.fill();
+    rimGrad.addColorStop(1,    'rgba(0,0,0,0.38)');
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2);
+    ctx.fillStyle = rimGrad; ctx.fill();
 
-    // Specular highlight (large soft)
     const spec1Grad = ctx.createRadialGradient(cx-r*0.28, cy-r*0.3, 0, cx-r*0.28, cy-r*0.3, r*0.55);
-    spec1Grad.addColorStop(0, 'rgba(255,255,255,0.28)');
+    spec1Grad.addColorStop(0,   'rgba(255,255,255,0.28)');
     spec1Grad.addColorStop(0.4, 'rgba(255,255,255,0.08)');
-    spec1Grad.addColorStop(1, 'rgba(255,255,255,0)');
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI*2);
-    ctx.fillStyle = spec1Grad;
-    ctx.fill();
+    spec1Grad.addColorStop(1,   'rgba(255,255,255,0)');
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2);
+    ctx.fillStyle = spec1Grad; ctx.fill();
 
-    // Sharp catchlight
     ctx.save();
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI*2);
-    ctx.clip();
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.clip();
     const catchGrad = ctx.createRadialGradient(cx-r*0.3, cy-r*0.4, 0, cx-r*0.3, cy-r*0.4, r*0.22);
-    catchGrad.addColorStop(0, 'rgba(255,255,255,0.72)');
+    catchGrad.addColorStop(0,   'rgba(255,255,255,0.72)');
     catchGrad.addColorStop(0.3, 'rgba(255,255,255,0.3)');
-    catchGrad.addColorStop(1, 'rgba(255,255,255,0)');
+    catchGrad.addColorStop(1,   'rgba(255,255,255,0)');
     ctx.fillStyle = catchGrad;
     ctx.fillRect(cx-r, cy-r, r*2, r*2);
-
-    // Tiny secondary sparkle
     const spark = ctx.createRadialGradient(cx+r*0.18, cy-r*0.5, 0, cx+r*0.18, cy-r*0.5, r*0.1);
     spark.addColorStop(0, 'rgba(255,255,255,0.55)');
     spark.addColorStop(1, 'rgba(255,255,255,0)');
@@ -322,14 +373,11 @@ animateRing();
     ctx.fillRect(cx-r, cy-r, r*2, r*2);
     ctx.restore();
 
-    // Subtle translucency at top
     const transGrad = ctx.createRadialGradient(cx, cy-r*0.6, 0, cx, cy-r*0.6, r*0.35);
     transGrad.addColorStop(0, 'rgba(255,120,140,0.15)');
     transGrad.addColorStop(1, 'rgba(255,120,140,0)');
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI*2);
-    ctx.fillStyle = transGrad;
-    ctx.fill();
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2);
+    ctx.fillStyle = transGrad; ctx.fill();
   }
 
   let animTilt = {x: 0, y: 0};
@@ -342,40 +390,8 @@ animateRing();
   animate();
 })();
 
-// ── PROJECTS DATA ──
+// ── PROJECTS ──
 const projects = [
-  /* {
-    emoji: '🛒',
-    bg: 'linear-gradient(135deg, #1a0d12 0%, #2d0a1f 100%)',
-    tag: 'UI Design · E-commerce',
-    title: 'Bloom Market',
-    desc: 'Plataforma de e-commerce para artesanato local com checkout intuitivo e experiência mobile-first.',
-    links: ['Live Demo', 'Case Study'],
-  }, */
-  /* {
-    emoji: '📊',
-    bg: 'linear-gradient(135deg, #0d1020 0%, #1a1535 100%)',
-    tag: 'Dashboard · SaaS',
-    title: 'Metric Studio',
-    desc: 'Dashboard analítico com visualizações de dados em tempo real para equipes de produto.',
-    links: ['Live Demo', 'GitHub'],
-  }, */
-  /* {
-    emoji: '🎵',
-    bg: 'linear-gradient(135deg, #0f1a10 0%, #1a2d1a 100%)',
-    tag: 'App Mobile · UX',
-    title: 'Harmonia',
-    desc: 'Aplicativo de streaming musical com interface gestual e personalização profunda de playlists.',
-    links: ['Protótipo', 'Behance'],
-  }, */
-  /* {
-    emoji: '🏠',
-    bg: 'linear-gradient(135deg, #1a1005 0%, #2d200a 100%)',
-    tag: 'Web App · Real Estate',
-    title: 'Nidus',
-    desc: 'Plataforma imobiliária com tour virtual em 3D e match inteligente entre perfil e imóvel.',
-    links: ['Live Demo', 'Case Study'],
-  }, */
   {
     emoji: '💬',
     bg: 'linear-gradient(135deg, #0d1218 0%, #102030 100%)',
@@ -386,8 +402,8 @@ const projects = [
   },
 ];
 
-const track = document.getElementById('carouselTrack');
-const dotsEl = document.getElementById('carouselDots');
+const track   = document.getElementById('carouselTrack');
+const dotsEl  = document.getElementById('carouselDots');
 let currentIndex = 0;
 const total = projects.length;
 
@@ -410,50 +426,44 @@ projects.forEach((p, i) => {
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
         </a>`).join('')}
       </div>
-    </div>
-  `;
+    </div>`;
   track.appendChild(card);
 
   const dot = document.createElement('div');
-  dot.className = 'dot' + (i===0?' active':'');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
   dot.addEventListener('click', () => goTo(i));
   dotsEl.appendChild(dot);
 });
 
 function goTo(idx) {
   currentIndex = ((idx % total) + total) % total;
-  const cards = track.querySelectorAll('.project-card');
-  const dots = dotsEl.querySelectorAll('.dot');
-  const cardW = 320 + 24; // card width + gap
-  const wrapperW = track.parentElement.offsetWidth;
-  const offset = wrapperW/2 - cardW/2 - currentIndex*cardW;
+  const cards  = track.querySelectorAll('.project-card');
+  const dots   = dotsEl.querySelectorAll('.dot');
+  const cardW  = cards[0] ? cards[0].offsetWidth + 24 : 344;
+  const wrapW  = track.parentElement.offsetWidth;
+  const offset = wrapW / 2 - cardW / 2 - currentIndex * cardW;
   track.style.transform = `translateX(${offset}px)`;
-
-  cards.forEach((c,i) => {
-    c.classList.toggle('active', i === currentIndex);
-  });
-  dots.forEach((d,i) => d.classList.toggle('active', i === currentIndex));
+  cards.forEach((c, i) => c.classList.toggle('active', i === currentIndex));
+  dots.forEach((d, i)  => d.classList.toggle('active', i === currentIndex));
 }
 
-// Init position
-setTimeout(() => goTo(1), 50);
+setTimeout(() => goTo(0), 50);
+window.addEventListener('resize', () => goTo(currentIndex));
 
 document.getElementById('prevBtn').addEventListener('click', () => goTo(currentIndex - 1));
 document.getElementById('nextBtn').addEventListener('click', () => goTo(currentIndex + 1));
-
-// Auto-advance
 setInterval(() => goTo(currentIndex + 1), 5000);
 
 // ── SKILLS ──
 const skills = [
   { name: 'Figma & Prototyping', pct: 95 },
-  { name: 'React / Next.js', pct: 88 },
-  { name: 'UX Research', pct: 85 },
-  { name: 'TypeScript', pct: 80 },
-  { name: 'Design Systems', pct: 92 },
-  { name: 'CSS / Tailwind', pct: 90 },
-  { name: 'Framer Motion', pct: 78 },
-  { name: 'Node.js', pct: 72 },
+  { name: 'React / Next.js',     pct: 88 },
+  { name: 'UX Research',         pct: 85 },
+  { name: 'TypeScript',          pct: 80 },
+  { name: 'Design Systems',      pct: 92 },
+  { name: 'CSS / Tailwind',      pct: 90 },
+  { name: 'Framer Motion',       pct: 78 },
+  { name: 'Node.js',             pct: 72 },
 ];
 
 const skillsGrid = document.getElementById('skillsGrid');
@@ -467,28 +477,26 @@ skills.forEach(s => {
     </div>
     <div class="skill-bar">
       <div class="skill-fill" data-pct="${s.pct}"></div>
-    </div>
-  `;
+    </div>`;
   skillsGrid.appendChild(el);
 });
 
 // ── EXPERIENCE ──
 const experiences = [
   {
-  date: 'Fev 2022 – Dez 2023',
-  role: 'Suporte Técnico / Montagem e Manutenção de Computadores',
-  company: 'Prefeitura Municipal',
-  desc: 'Montagem, desmontagem e manutenção de computadores. Suporte técnico, diagnóstico de problemas, formatação, instalação de softwares e assistência geral aos usuários.',
-  tags: ['Hardware', 'Suporte Técnico', 'Manutenção', 'Sistemas Operacionais']
-},
-{
-  date: 'Jan 2021 – Dez 2021',
-  role: 'Instrutora de Português e Matemática',
-  company: 'Kumon',
-  desc: 'Aulas de reforço em português e matemática. Auxílio aos alunos no aprendizado, organização de materiais didáticos e suporte no acompanhamento das atividades.',
-  tags: ['Educação', 'Ensino', 'Organização', 'Comunicação']
-}
-
+    date: 'Fev 2022 – Dez 2023',
+    role: 'Suporte Técnico / Montagem e Manutenção de Computadores',
+    company: 'Prefeitura Municipal',
+    desc: 'Montagem, desmontagem e manutenção de computadores. Suporte técnico, diagnóstico de problemas, formatação, instalação de softwares e assistência geral aos usuários.',
+    tags: ['Hardware', 'Suporte Técnico', 'Manutenção', 'Sistemas Operacionais']
+  },
+  {
+    date: 'Jan 2021 – Dez 2021',
+    role: 'Instrutora de Português e Matemática',
+    company: 'Kumon',
+    desc: 'Aulas de reforço em português e matemática. Auxílio aos alunos no aprendizado, organização de materiais didáticos e suporte no acompanhamento das atividades.',
+    tags: ['Educação', 'Ensino', 'Organização', 'Comunicação']
+  }
 ];
 
 const timeline = document.getElementById('timeline');
@@ -500,8 +508,7 @@ experiences.forEach(e => {
     <h3 class="timeline-role">${e.role}</h3>
     <p class="timeline-company">${e.company}</p>
     <p class="timeline-desc">${e.desc}</p>
-    <div class="timeline-tags">${e.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-  `;
+    <div class="timeline-tags">${e.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
   timeline.appendChild(el);
 });
 
@@ -510,7 +517,6 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.classList.add('visible');
-      // Animate skill bars
       e.target.querySelectorAll('.skill-fill').forEach(bar => {
         bar.style.width = bar.dataset.pct + '%';
       });
@@ -520,10 +526,9 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// Also trigger skill bar animation when skills section is visible
 const skillObserver = new IntersectionObserver((entries) => {
   entries.forEach(e => {
-    if(e.isIntersecting) {
+    if (e.isIntersecting) {
       e.target.querySelectorAll('.skill-fill').forEach(bar => {
         bar.style.width = bar.dataset.pct + '%';
       });
@@ -531,7 +536,12 @@ const skillObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 skillObserver.observe(document.getElementById('skills'));
+
+// ── HEADER SCROLL EFFECT ──
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 20);
+});
 </script>
- <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
