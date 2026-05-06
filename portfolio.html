@@ -140,41 +140,41 @@
       </div>
     </div>
     <div class="contact-card fade-in" style="position:relative;">
-      <!-- Corner cherry deco -->
-      <svg class="cherry-deco" style="top:-10px;right:-8px;width:60px;" viewBox="0 0 80 80" fill="none">
-        <circle cx="28" cy="52" r="16" fill="#8E0038"/>
-        <circle cx="55" cy="44" r="13" fill="#C2185B"/>
-        <path d="M28 36 Q38 10 55 31" stroke="#4a7c5f" stroke-width="2" fill="none"/>
-        <path d="M36 18 Q45 5 52 31" stroke="#4a7c5f" stroke-width="2.5" fill="none"/>
-        <circle cx="28" cy="52" r="6" fill="rgba(255,255,255,0.12)"/>
-      </svg>
-      <svg class="cherry-deco" style="bottom:-10px;left:-8px;width:52px;transform:scale(-1,1);" viewBox="0 0 80 80" fill="none">
-        <circle cx="28" cy="52" r="14" fill="#8E0038"/>
-        <circle cx="52" cy="46" r="11" fill="#C2185B"/>
-        <path d="M28 38 Q38 12 52 33" stroke="#4a7c5f" stroke-width="2" fill="none"/>
-        <circle cx="28" cy="52" r="5" fill="rgba(255,255,255,0.1)"/>
-      </svg>
 
-      <div class="form-group">
-        <label class="form-label">Nome</label>
-        <input class="form-input" type="text" placeholder="Seu nome completo">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Email</label>
-        <input class="form-input" type="email" placeholder="seu@email.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Mensagem</label>
-        <textarea class="form-textarea" placeholder="Conte-me sobre seu projeto..."></textarea>
-      </div>
-      <button class="btn-primary" style="width:100%;justify-content:center;margin-top:0.5rem;">
-        Enviar mensagem
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-      </button>
-    </div>
+     <!-- Corner cherry deco -->
+<svg class="cherry-deco" style="top:-10px;right:-8px;width:60px;" viewBox="0 0 80 80" fill="none">
+  <circle cx="28" cy="52" r="16" fill="#8E0038"/>
+  <circle cx="55" cy="44" r="13" fill="#C2185B"/>
+  <path d="M28 36 Q38 10 55 31" stroke="#4a7c5f" stroke-width="2" fill="none"/>
+  <path d="M36 18 Q45 5 52 31" stroke="#4a7c5f" stroke-width="2.5" fill="none"/>
+  <circle cx="28" cy="52" r="6" fill="rgba(255,255,255,0.12)"/>
+</svg>
+<svg class="cherry-deco" style="bottom:-10px;left:-8px;width:52px;transform:scale(-1,1);" viewBox="0 0 80 80" fill="none">
+  <circle cx="28" cy="52" r="14" fill="#8E0038"/>
+  <circle cx="52" cy="46" r="11" fill="#C2185B"/>
+  <path d="M28 38 Q38 12 52 33" stroke="#4a7c5f" stroke-width="2" fill="none"/>
+  <circle cx="28" cy="52" r="5" fill="rgba(255,255,255,0.1)"/>
+</svg>
+
+<form id="contact-form">
+  <div class="form-group">
+    <label class="form-label">Nome</label>
+    <input class="form-input" type="text" name="nome" placeholder="Seu nome completo" required>
   </div>
-</section>
-</div>
+  <div class="form-group">
+    <label class="form-label">Email</label>
+    <input class="form-input" type="email" name="email" placeholder="seu@email.com" required>
+  </div>
+  <div class="form-group">
+    <label class="form-label">Mensagem</label>
+    <textarea class="form-textarea" name="mensagem" placeholder="Conte-me sobre seu projeto..." required></textarea>
+  </div>
+  <button class="btn-primary" type="submit" style="width:100%;justify-content:center;margin-top:0.5rem;">
+    Enviar mensagem
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+  </button>
+  <p id="form-status" style="text-align:center;margin-top:1rem;font-size:0.9rem;"></p>
+</form>
 
 <!-- FOOTER -->
 <footer>
@@ -538,5 +538,6 @@ const skillObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 skillObserver.observe(document.getElementById('skills'));
 </script>
+ <script src="script.js"></script>
 </body>
 </html>
